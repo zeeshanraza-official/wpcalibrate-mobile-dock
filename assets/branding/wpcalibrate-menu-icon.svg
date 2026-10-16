@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" fill="none">
+	<!-- Outer Rounded C Frame -->
+	<path d="M 13.5 2 L 6.5 2 C 4 2 2 4 2 6.5 L 2 13.5 C 2 16 4 18 6.5 18 L 13.5 18 C 16 18 18 16 18 13.5 L 18 12.5 C 18 12.2 17.8 12 17.5 12 L 15.5 12 C 15.2 12 15 12.2 15 12.5 L 15 13.2 C 15 14.2 14.2 15 13.2 15 L 6.8 15 C 5.8 15 5 14.2 5 13.2 L 5 6.8 C 5 5.8 5.8 5 6.8 5 L 13.2 5 C 14.2 5 15 5.8 15 6.8 L 15 7.5 C 15 7.8 15.2 8 15.5 8 L 17.5 8 C 17.8 8 18 7.8 18 7.5 L 18 6.5 C 18 4 16 2 13.5 2 Z" fill="#a7aaad"/>
+	<!-- Teal Accent in the C gap -->
+	<rect x="15.8" y="9.2" width="2.4" height="1.6" rx="0.5" fill="#00a896"/>
+	<!-- Stylized WP mark -->
+	<text x="5.5" y="12.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="6.8" font-weight="900" fill="#a7aaad" letter-spacing="-0.8">WP</text>
+</svg>

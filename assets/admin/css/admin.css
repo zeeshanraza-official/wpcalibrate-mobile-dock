@@ -1,0 +1,1049 @@
+/**
+ * WPCalibrate Mobile Dock - Admin Styles
+ */
+
+/* ==========================================================================
+   Header & Layout
+   ========================================================================== */
+.wpcal-admin-wrap {
+	margin: 20px 20px 0 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.wpcal-admin-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #ffffff;
+	padding: 18px 24px;
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+	margin-bottom: 20px;
+	border: 1px solid #e2e8f0;
+}
+
+.wpcal-admin-header__brand {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.wpcal-brand-logo-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	background: #f8fafc;
+	border-radius: 10px;
+	border: 1px solid #e2e8f0;
+	padding: 4px;
+	flex-shrink: 0;
+}
+
+.wpcal-brand-logo {
+	width: 34px;
+	height: 34px;
+	object-fit: contain;
+}
+
+.wpcal-admin-header__title-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.wpcal-title-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.wpcal-admin-header__title {
+	font-size: 20px;
+	font-weight: 700;
+	color: #0f172a;
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+}
+
+.wpcal-admin-header__tagline {
+	margin: 2px 0 0 0;
+	color: #64748b;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.wpcal-btn-header-cta {
+	display: inline-flex !important;
+	align-items: center;
+	gap: 6px;
+	font-weight: 600 !important;
+	padding: 6px 16px !important;
+	height: auto !important;
+	border-radius: 6px !important;
+	background: #0d2847 !important;
+	border-color: #0d2847 !important;
+	box-shadow: 0 1px 3px rgba(13, 40, 71, 0.2) !important;
+	transition: all 0.2s ease !important;
+}
+
+.wpcal-btn-header-cta:hover {
+	background: #173b64 !important;
+	border-color: #173b64 !important;
+	transform: translateY(-1px);
+}
+
+.wpcal-version-badge {
+	display: inline-block;
+	background: #e2e8f0;
+	color: #334155;
+	font-size: 11px;
+	font-weight: 700;
+	padding: 2px 8px;
+	border-radius: 999px;
+}
+
+.wpcal-nav-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	border-bottom: 2px solid #e2e8f0 !important;
+	padding-bottom: 0 !important;
+	margin-bottom: 24px;
+}
+
+.wpcal-nav-tabs .nav-tab {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 10px 16px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #475569;
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-bottom: none;
+	border-radius: 8px 8px 0 0;
+	margin: 0;
+	transition: all 0.15s ease-in-out;
+}
+
+.wpcal-nav-tabs .nav-tab:hover {
+	background: #ffffff;
+	color: #0f172a;
+}
+
+.wpcal-nav-tabs .nav-tab-active,
+.wpcal-nav-tabs .nav-tab-active:focus,
+.wpcal-nav-tabs .nav-tab-active:hover {
+	background: #ffffff !important;
+	color: #0d2847 !important;
+	border-color: #cbd5e1 !important;
+	border-bottom: 2px solid #ffffff !important;
+	margin-bottom: -2px;
+	box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.wpcal-nav-tabs .nav-tab .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	color: #64748b;
+}
+
+.wpcal-nav-tabs .nav-tab-active .dashicons {
+	color: #00a896;
+}
+
+.wpcal-section-card {
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 12px;
+	padding: 26px;
+	margin-bottom: 24px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.wpcal-nav-bar-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin-bottom: 20px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #f1f5f9;
+}
+
+.wpcal-card-header {
+	margin-bottom: 20px;
+}
+
+.wpcal-card-header h2,
+.wpcal-card-header h3 {
+	margin: 0 0 6px 0;
+	font-size: 19px;
+	font-weight: 700;
+	color: #0f172a;
+}
+
+.wpcal-desc {
+	margin: 0;
+	color: #64748b;
+	font-size: 13.5px;
+	line-height: 1.5;
+}
+
+/* ==========================================================================
+   Badges, Counters & Tables
+   ========================================================================== */
+.wpcal-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 3px 10px;
+	font-size: 11.5px;
+	font-weight: 600;
+	border-radius: 999px;
+	line-height: 1.4;
+}
+
+.wpcal-pulse-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #10b981;
+	box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+	animation: wpcal-pulse 2s infinite;
+}
+
+.wpcal-count-pill {
+	display: inline-block;
+	background: #f1f5f9;
+	color: #334155;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 2px 8px;
+	border-radius: 999px;
+	border: 1px solid #e2e8f0;
+}
+
+.wpcal-table-title-link {
+	color: #0f172a;
+	text-decoration: none;
+	font-size: 14px;
+	transition: color 0.15s ease;
+}
+
+.wpcal-table-title-link:hover {
+	color: #0284c7;
+}
+
+.wpcal-badge--active {
+	background: #ecfdf5;
+	color: #065f46;
+	border: 1px solid #a7f3d0;
+}
+
+.wpcal-badge--draft {
+	background: #f1f5f9;
+	color: #475569;
+	border: 1px solid #e2e8f0;
+}
+
+.wpcal-badge--default {
+	background: #eff6ff;
+	color: #1d4ed8;
+	border: 1px solid #bfdbfe;
+}
+
+.wpcal-badge--muted {
+	background: #f1f5f9;
+	color: #475569;
+}
+
+.wpcal-table {
+	border: 1px solid #e2e8f0 !important;
+	border-radius: 10px !important;
+	overflow: hidden;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+
+.wpcal-table thead th {
+	background: #f8fafc !important;
+	border-bottom: 1px solid #e2e8f0 !important;
+	color: #475569 !important;
+	font-size: 12px !important;
+	font-weight: 700 !important;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	padding: 12px 14px !important;
+}
+
+.wpcal-table tbody td {
+	padding: 14px 14px !important;
+	vertical-align: middle !important;
+	border-bottom: 1px solid #f1f5f9 !important;
+	font-size: 13.5px;
+}
+
+.wpcal-table tbody tr:hover {
+	background: #f8fafc !important;
+}
+
+/* Modern Form Table Styling */
+.wpcal-section-card .form-table {
+	margin-top: 8px;
+}
+
+.wpcal-section-card .form-table th {
+	padding: 16px 16px 16px 0;
+	font-size: 13.5px;
+	font-weight: 600;
+	color: #1e293b;
+	vertical-align: top;
+	width: 220px;
+}
+
+.wpcal-section-card .form-table td {
+	padding: 16px 0;
+	vertical-align: top;
+}
+
+.wpcal-section-card .form-table tr:not(:last-child) {
+	border-bottom: 1px solid #f8fafc;
+}
+
+.wpcal-section-card select,
+.wpcal-section-card input[type="text"],
+.wpcal-section-card input[type="number"],
+.wpcal-section-card input[type="password"] {
+	border: 1px solid #cbd5e1;
+	border-radius: 8px;
+	padding: 7px 12px;
+	font-size: 13.5px;
+	color: #0f172a;
+	background: #ffffff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+	transition: all 0.15s ease-in-out;
+	height: auto;
+	min-height: 38px;
+}
+
+.wpcal-section-card select:focus,
+.wpcal-section-card input[type="text"]:focus,
+.wpcal-section-card input[type="number"]:focus,
+.wpcal-section-card input[type="password"]:focus {
+	border-color: #0284c7;
+	box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+	outline: none;
+}
+
+.wpcal-section-card .description {
+	color: #64748b;
+	font-size: 12.5px;
+	margin-top: 6px;
+	line-height: 1.45;
+}
+
+.wpcal-notice {
+	margin: 15px 0 !important;
+}
+
+/* ==========================================================================
+   Editor Grid Layout
+   ========================================================================== */
+.wpcal-editor-layout {
+	display: grid;
+	grid-template-columns: 1fr 320px;
+	gap: 24px;
+}
+
+@media (max-width: 960px) {
+	.wpcal-editor-layout {
+		grid-template-columns: 1fr;
+	}
+}
+
+.wpcal-sidebar-card {
+	background: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.wpcal-sidebar-card h3 {
+	margin-top: 0;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.wpcal-field-group {
+	margin-bottom: 14px;
+}
+
+.wpcal-field-group label {
+	display: block;
+	margin-bottom: 4px;
+}
+
+.wpcal-btn-block {
+	width: 100%;
+	text-align: center;
+}
+
+.wpcal-mt-1 { margin-top: 6px; }
+.wpcal-mt-2 { margin-top: 12px; }
+
+/* ==========================================================================
+   Navigation Item Card Builder
+   ========================================================================== */
+.wpcal-items-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 14px;
+}
+
+.wpcal-item-card {
+	border: 1px solid #d1d5db;
+	border-radius: 8px;
+	background: #fafafa;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.wpcal-item-card:hover {
+	border-color: #9ca3af;
+}
+
+.wpcal-item-card.is-dragging {
+	opacity: 0.5;
+	background: #f3f4f6;
+}
+
+.wpcal-item-card__header {
+	display: flex;
+	align-items: center;
+	padding: 10px 14px;
+	gap: 10px;
+	background: #ffffff;
+	border-radius: 8px;
+}
+
+.wpcal-item-card__drag {
+	cursor: grab;
+	color: #9ca3af;
+	display: flex;
+	align-items: center;
+}
+
+.wpcal-item-card__drag:active {
+	cursor: grabbing;
+}
+
+.wpcal-icon-select-btn {
+	padding: 4px 8px !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+.wpcal-icon-btn-preview svg {
+	display: block;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.wpcal-item-card__title {
+	flex: 1;
+}
+
+.wpcal-item-card__title input {
+	width: 100%;
+}
+
+.wpcal-item-card__controls {
+	display: flex;
+	gap: 4px;
+}
+
+.wpcal-item-card__body {
+	display: none;
+	padding: 16px;
+	border-top: 1px solid #e5e7eb;
+	background: #f9fafb;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.wpcal-item-card__body.is-open {
+	display: block;
+}
+
+.wpcal-grid-3 {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 16px;
+}
+
+/* ==========================================================================
+   Visibility Rules Cards
+   ========================================================================== */
+.wpcal-rules-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 14px;
+}
+
+.wpcal-rule-card {
+	background: #f9fafb;
+	border: 1px solid #e5e7eb;
+	border-radius: 6px;
+	padding: 12px 14px;
+}
+
+.wpcal-rule-card__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+}
+
+.wpcal-rule-field {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.wpcal-rule-actions {
+	margin-left: auto;
+}
+
+/* ==========================================================================
+   Icon Picker Modal
+   ========================================================================== */
+.wpcal-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wpcal-modal[hidden] {
+	display: none !important;
+}
+
+.wpcal-modal__backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(2px);
+}
+
+.wpcal-modal__dialog {
+	position: relative;
+	width: 90%;
+	max-width: 600px;
+	max-height: 85vh;
+	background: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	z-index: 2;
+}
+
+.wpcal-modal__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 20px;
+	border-bottom: 1px solid #e5e7eb;
+}
+
+.wpcal-modal__header h3 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.wpcal-modal__close {
+	background: transparent;
+	border: none;
+	font-size: 22px;
+	line-height: 1;
+	cursor: pointer;
+	color: #9ca3af;
+}
+
+.wpcal-modal__close:hover {
+	color: #111827;
+}
+
+.wpcal-modal__search {
+	padding: 12px 20px;
+	border-bottom: 1px solid #f3f4f6;
+}
+
+.wpcal-modal__body {
+	padding: 20px;
+	overflow-y: auto;
+	flex: 1;
+}
+
+.wpcal-icon-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+	gap: 10px;
+}
+
+.wpcal-icon-option {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 8px;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	background: #ffffff;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+
+.wpcal-icon-option:hover,
+.wpcal-icon-option:focus {
+	border-color: #2563eb;
+	background: #eff6ff;
+	color: #2563eb;
+	outline: none;
+}
+
+.wpcal-icon-preview {
+	margin-bottom: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wpcal-icon-preview svg {
+	display: block;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.wpcal-icon-name {
+	font-size: 11px;
+	color: #4b5563;
+	text-align: center;
+	word-break: break-word;
+}
+
+/* ==========================================================================
+   Support & Utility
+   ========================================================================== */
+.wpcal-flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.wpcal-status-box {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 16px;
+	border-radius: 6px;
+	margin-bottom: 20px;
+}
+
+.wpcal-status-box--active {
+	background: #f0fdf4;
+	border: 1px solid #bbf7d0;
+	color: #166534;
+}
+
+.wpcal-status-box--inactive {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	color: #475569;
+}
+
+.wpcal-text-success { color: #166534; font-weight: 500; }
+.wpcal-text-muted { color: #64748b; }
+
+.wpcal-support-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 20px;
+	margin-bottom: 24px;
+}
+
+.wpcal-support-card {
+	padding: 20px;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	background: #f9fafb;
+}
+
+.wpcal-support-icon {
+	font-size: 28px;
+	margin-bottom: 8px;
+}
+
+.wpcal-divider {
+	margin: 24px 0;
+	border: 0;
+	border-top: 1px solid #e5e7eb;
+}
+
+.wpcal-danger-zone {
+	padding: 16px;
+	border: 1px solid #fecaca;
+	background: #fef2f2;
+	border-radius: 6px;
+}
+
+/* ==========================================================================
+   Overview Tab Styles
+   ========================================================================== */
+.wpcal-overview-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.wpcal-hero-banner {
+	background: linear-gradient(135deg, #0d2847 0%, #173b64 50%, #0c4a6e 100%);
+	border-radius: 14px;
+	padding: 32px 36px;
+	color: #ffffff;
+	box-shadow: 0 4px 20px rgba(13, 40, 71, 0.15);
+	position: relative;
+	overflow: hidden;
+}
+
+.wpcal-hero-banner::after {
+	content: "";
+	position: absolute;
+	right: -40px;
+	bottom: -40px;
+	width: 220px;
+	height: 220px;
+	background: radial-gradient(circle, rgba(0, 168, 150, 0.25) 0%, rgba(0, 168, 150, 0) 70%);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+.wpcal-hero-banner__badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: rgba(255, 255, 255, 0.12);
+	backdrop-filter: blur(8px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 4px 12px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #7dd3fc;
+	margin-bottom: 14px;
+}
+
+.wpcal-hero-pulse {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #00a896;
+	box-shadow: 0 0 0 0 rgba(0, 168, 150, 0.7);
+	animation: wpcal-pulse 2s infinite;
+}
+
+@keyframes wpcal-pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(0, 168, 150, 0.7);
+	}
+	70% {
+		box-shadow: 0 0 0 8px rgba(0, 168, 150, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(0, 168, 150, 0);
+	}
+}
+
+.wpcal-hero-banner__title {
+	font-size: 26px;
+	font-weight: 800;
+	color: #ffffff;
+	margin: 0 0 10px 0;
+	line-height: 1.25;
+	letter-spacing: -0.02em;
+}
+
+.wpcal-hero-banner__desc {
+	font-size: 15px;
+	color: #cbd5e1;
+	line-height: 1.6;
+	max-width: 760px;
+	margin: 0 0 24px 0;
+}
+
+.wpcal-hero-banner__actions {
+	display: flex;
+	gap: 12px;
+	margin-bottom: 28px;
+}
+
+.wpcal-btn-primary {
+	background: #00a896 !important;
+	border-color: #00a896 !important;
+	color: #ffffff !important;
+	font-weight: 600 !important;
+	padding: 8px 20px !important;
+	height: auto !important;
+	border-radius: 8px !important;
+	box-shadow: 0 2px 6px rgba(0, 168, 150, 0.35) !important;
+	transition: all 0.2s ease !important;
+	display: inline-flex !important;
+	align-items: center;
+	gap: 6px;
+}
+
+.wpcal-btn-primary:hover {
+	background: #008778 !important;
+	border-color: #008778 !important;
+	color: #ffffff !important;
+	transform: translateY(-1px);
+}
+
+.wpcal-btn-secondary {
+	background: rgba(255, 255, 255, 0.12) !important;
+	border: 1px solid rgba(255, 255, 255, 0.25) !important;
+	color: #ffffff !important;
+	font-weight: 600 !important;
+	padding: 8px 20px !important;
+	height: auto !important;
+	border-radius: 8px !important;
+	backdrop-filter: blur(4px);
+	transition: all 0.2s ease !important;
+	display: inline-flex !important;
+	align-items: center;
+	gap: 6px;
+}
+
+.wpcal-btn-secondary:hover {
+	background: rgba(255, 255, 255, 0.2) !important;
+	color: #ffffff !important;
+	transform: translateY(-1px);
+}
+
+.wpcal-hero-banner__stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 16px;
+	padding-top: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.wpcal-stat-pill {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 10px;
+	padding: 12px 16px;
+	backdrop-filter: blur(4px);
+}
+
+.wpcal-stat-pill__icon {
+	font-size: 22px;
+	line-height: 1;
+}
+
+.wpcal-stat-pill__data {
+	display: flex;
+	flex-direction: column;
+}
+
+.wpcal-stat-pill__value {
+	font-size: 16px;
+	font-weight: 700;
+	color: #ffffff;
+	line-height: 1.2;
+}
+
+.wpcal-stat-pill__label {
+	font-size: 11px;
+	color: #94a3b8;
+	font-weight: 500;
+}
+
+.wpcal-section-header {
+	margin-top: 8px;
+	margin-bottom: 16px;
+}
+
+.wpcal-section-header h3 {
+	font-size: 18px;
+	font-weight: 700;
+	color: #0f172a;
+	margin: 0 0 4px 0;
+}
+
+.wpcal-card {
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 12px;
+	padding: 24px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+	transition: all 0.2s ease;
+}
+
+.wpcal-step-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.wpcal-step-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+	border-color: #cbd5e1;
+}
+
+.wpcal-step-number {
+	position: absolute;
+	right: 18px;
+	top: 14px;
+	font-size: 32px;
+	font-weight: 900;
+	color: #f1f5f9;
+	user-select: none;
+	line-height: 1;
+}
+
+.wpcal-step-icon {
+	font-size: 26px;
+	margin-bottom: 14px;
+}
+
+.wpcal-step-title {
+	font-size: 16px;
+	font-weight: 700;
+	color: #0f172a;
+	margin: 0 0 8px 0;
+}
+
+.wpcal-step-desc {
+	font-size: 13px;
+	color: #64748b;
+	line-height: 1.6;
+	margin: 0 0 16px 0;
+	flex-grow: 1;
+}
+
+.wpcal-link-action {
+	font-size: 13px;
+	font-weight: 600;
+	color: #0284c7;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	transition: gap 0.2s ease;
+}
+
+.wpcal-link-action:hover {
+	color: #0369a1;
+	gap: 8px;
+}
+
+.wpcal-feature-item {
+	display: flex;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+.wpcal-feature-bullet {
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background: #e0f2fe;
+	color: #0369a1;
+	font-size: 12px;
+	font-weight: 800;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	margin-top: 2px;
+}
+
+.wpcal-feature-text {
+	font-size: 13px;
+	line-height: 1.6;
+	color: #334155;
+}
+
+.wpcal-feature-text strong {
+	color: #0f172a;
+}
+
+.wpcal-diag-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 18px;
+}
+
+.wpcal-diag-table td {
+	padding: 10px 12px;
+	border-bottom: 1px solid #f1f5f9;
+	font-size: 13px;
+}
+
+.wpcal-diag-table td:first-child {
+	color: #475569;
+	width: 45%;
+}
+
+.wpcal-support-box {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 10px;
+	padding: 16px;
+}
+
+.wpcal-support-box__text {
+	font-size: 12px;
+	color: #475569;
+	margin: 0 0 12px 0;
+	line-height: 1.5;
+}
+
+.wpcal-support-box__buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+

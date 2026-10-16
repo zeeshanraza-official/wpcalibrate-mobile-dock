@@ -1,0 +1,395 @@
+/**
+ * WPCalibrate Mobile Dock - Frontend Styles
+ * Fast, lightweight, zero-dependency, app-style bottom navigation.
+ */
+
+:root {
+	--wpcal-dock-bg: #ffffff;
+	--wpcal-dock-icon-color: #4b5563;
+	--wpcal-dock-active-icon: #2563eb;
+	--wpcal-dock-text-color: #6b7280;
+	--wpcal-dock-active-text: #2563eb;
+	--wpcal-dock-font-size: 11px;
+	--wpcal-dock-icon-size: 22px;
+	--wpcal-dock-height: 60px;
+	--wpcal-dock-horiz-gap: 8px;
+	--wpcal-dock-item-padding: 6px 4px;
+	--wpcal-dock-border-width: 1px;
+	--wpcal-dock-border-color: #e5e7eb;
+	--wpcal-dock-border-radius: 0px;
+	--wpcal-dock-box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.06);
+	--wpcal-center-btn-size: 52px;
+	--wpcal-center-btn-offset: -16px;
+	--wpcal-center-btn-bg: #2563eb;
+	--wpcal-center-btn-icon-col: #ffffff;
+}
+
+/* ==========================================================================
+   Mobile Dock Container
+   ========================================================================== */
+.wpcal-mobile-dock {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 999990;
+	display: none; /* Controlled by responsive layout style tag */
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--wpcal-dock-bg);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	box-shadow: var(--wpcal-dock-box-shadow);
+	border-top: var(--wpcal-dock-border-width) solid var(--wpcal-dock-border-color);
+	padding-bottom: env(safe-area-inset-bottom, 0px);
+	box-sizing: border-box;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	overflow: visible !important;
+}
+
+/* Floating / Pill Layout */
+.wpcal-mobile-dock.wpcal-layout-floating {
+	left: 16px;
+	right: 16px;
+	bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+	border-radius: 28px;
+	border: var(--wpcal-dock-border-width) solid var(--wpcal-dock-border-color);
+	padding-bottom: 0;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.wpcal-mobile-dock__inner {
+	width: 100%;
+	height: var(--wpcal-dock-height);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	overflow: visible !important;
+}
+
+.wpcal-mobile-dock__items {
+	list-style: none;
+	margin: 0;
+	padding: 0 6px;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: space-around;
+	align-items: center;
+	box-sizing: border-box;
+	overflow: visible !important;
+}
+
+/* ==========================================================================
+   Item & Link
+   ========================================================================== */
+.wpcal-item {
+	flex: 1 1 0%;
+	min-width: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: visible !important;
+}
+
+.wpcal-item__link {
+	width: 100%;
+	height: 100%;
+	min-height: 44px; /* WCAG touch target */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: var(--wpcal-dock-item-padding);
+	background: transparent;
+	border: none;
+	color: var(--wpcal-dock-text-color);
+	text-decoration: none;
+	font-size: var(--wpcal-dock-font-size);
+	line-height: 1.2;
+	text-align: center;
+	cursor: pointer;
+	box-sizing: border-box;
+	transition: color 0.18s ease, transform 0.15s ease;
+	position: relative;
+	outline: none;
+	border-radius: 8px;
+}
+
+.wpcal-item__link:focus {
+	outline: none;
+}
+
+.wpcal-item__link:focus-visible {
+	outline: 2px solid var(--wpcal-dock-active-icon);
+	outline-offset: 2px;
+}
+
+.wpcal-item:not(.wpcal-item--center-raised) .wpcal-item__link:active {
+	transform: scale(0.92);
+}
+
+.wpcal-item__icon-wrap {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: var(--wpcal-dock-icon-size);
+	height: var(--wpcal-dock-icon-size);
+	margin-bottom: 3px;
+	color: var(--wpcal-dock-icon-color);
+	transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.wpcal-dock-icon {
+	width: 100%;
+	height: 100%;
+	display: block;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.wpcal-item__label {
+	display: block;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: 500;
+	letter-spacing: -0.01em;
+}
+
+.wpcal-hide-labels .wpcal-item__label {
+	display: none !important;
+}
+
+.wpcal-hide-labels .wpcal-item__icon-wrap {
+	margin-bottom: 0;
+}
+
+/* Active State */
+.wpcal-item--active .wpcal-item__link {
+	color: var(--wpcal-dock-active-text);
+	font-weight: 600;
+}
+
+.wpcal-item--active .wpcal-item__icon-wrap {
+	color: var(--wpcal-dock-active-icon);
+	transform: translateY(-1px);
+}
+
+.wpcal-item--active:not(.wpcal-item--center-raised)::after {
+	content: "";
+	position: absolute;
+	bottom: 3px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: var(--wpcal-dock-active-icon);
+	box-shadow: 0 0 6px var(--wpcal-dock-active-icon);
+}
+
+.wpcal-hide-labels .wpcal-item--active:not(.wpcal-item--center-raised)::after {
+	bottom: 6px;
+	width: 5px;
+	height: 5px;
+}
+
+/* ==========================================================================
+   Center Raised Action Button
+   ========================================================================== */
+.wpcal-item--center-raised {
+	position: relative;
+	overflow: visible !important;
+}
+
+.wpcal-item--center-raised .wpcal-item__link {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: var(--wpcal-center-btn-size, 54px);
+	height: var(--wpcal-center-btn-size, 54px);
+	background: var(--wpcal-center-btn-bg);
+	border-radius: 50%;
+	border: 4px solid var(--wpcal-dock-bg);
+	box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1);
+	padding: 0;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.wpcal-item--center-raised .wpcal-item__link:hover {
+	transform: translateX(-50%) translateY(-2px);
+	box-shadow: 0 10px 28px rgba(37, 99, 235, 0.48), 0 4px 10px rgba(0, 0, 0, 0.14);
+}
+
+.wpcal-item--center-raised .wpcal-item__link:active {
+	transform: translateX(-50%) scale(0.92);
+}
+
+.wpcal-item--center-raised .wpcal-item__icon-wrap {
+	color: var(--wpcal-center-btn-icon-col);
+	margin-bottom: 0;
+	width: calc(var(--wpcal-dock-icon-size) * 1.15);
+	height: calc(var(--wpcal-dock-icon-size) * 1.15);
+}
+
+.wpcal-item--center-raised .wpcal-item__label {
+	display: none;
+}
+
+/* ==========================================================================
+   WooCommerce Cart Badge
+   ========================================================================== */
+.wpcal-dock-badge-wrapper {
+	position: absolute;
+	top: -6px;
+	right: -10px;
+	z-index: 3;
+}
+
+.wpcal-dock-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 17px;
+	height: 17px;
+	padding: 0 4px;
+	border-radius: 999px;
+	background-color: #ef4444;
+	color: #ffffff;
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   Search Modal Dialog
+   ========================================================================== */
+.wpcal-search-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999999;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 80px 16px 20px 16px;
+	box-sizing: border-box;
+}
+
+.wpcal-search-modal[hidden] {
+	display: none !important;
+}
+
+.wpcal-search-modal__backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(2px);
+}
+
+.wpcal-search-modal__dialog {
+	position: relative;
+	width: 100%;
+	max-width: 480px;
+	background: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+	padding: 8px;
+	z-index: 2;
+}
+
+.wpcal-search-input-wrap {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.wpcal-search-input {
+	flex: 1;
+	border: 1px solid #d1d5db;
+	border-radius: 8px;
+	padding: 10px 14px;
+	font-size: 16px;
+	outline: none;
+	color: #111827;
+}
+
+.wpcal-search-input:focus {
+	border-color: #2563eb;
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.wpcal-search-submit,
+.wpcal-search-close {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 8px 12px;
+	border-radius: 6px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	color: #4b5563;
+}
+
+.wpcal-search-submit:hover,
+.wpcal-search-close:hover {
+	background: #f3f4f6;
+	color: #111827;
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.wpcal-mobile-dock,
+	.wpcal-item__link,
+	.wpcal-item__icon-wrap {
+		transition: none !important;
+	}
+}
+
+/* ==========================================================================
+   RTL Support
+   ========================================================================== */
+[dir="rtl"] .wpcal-dock-badge-wrapper {
+	right: auto;
+	left: -10px;
+}
